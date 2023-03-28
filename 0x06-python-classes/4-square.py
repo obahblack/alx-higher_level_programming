@@ -1,11 +1,30 @@
 #!/usr/bin/python3
+"""
+Module 4-square
+Defines class Square with private size and public area
+Can access and update size
+"""
+
 class Square:
     """
-    Square class that represents a square
+     class Square definition
+
+    Args:
+        size (int): size of a side in square
+
+    Functions:
+        __init__(self, size)
+        size(self)
+        size(self, value)
+        area(self)
     """
+
     def __init__(self, size=0):
         """
         Instantiation with optimal size
+
+        Attributes:
+            size (int): defaults to 0 if none; don't use __size to call setter
         """
         self.__size = size
 
@@ -13,6 +32,8 @@ class Square:
     def size(self):
         """
         Getter for size
+
+        Return: size
         """
         return self.__size
 
@@ -20,6 +41,9 @@ class Square:
     def size(self, value):
         """
         Setter for size
+
+        Args:
+            value: sets size to value, if int and >= 0
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
