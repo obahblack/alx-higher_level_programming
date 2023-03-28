@@ -3,16 +3,22 @@
 Module 3-square
 Defines class square with private attribute size and public attribute area
 """
+
 class Square:
-     """
-    Square class that represents a square
     """
+    class Square that represents a square
+    """
+
     def __init__(self, size=0):
         """
         Initializes a Square instance with a given size.
 
         Args:
             size (int): size of the Square instance, defaults to 0.
+
+        Functions:
+        __init__(self, size)
+        area(self)
 
         Raises:
             TypeError: If size is not an integer.
@@ -24,6 +30,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+
 
     def area(self):
         """
