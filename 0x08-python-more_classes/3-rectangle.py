@@ -60,6 +60,9 @@ class Rectangle:
             return (self.__height * 2) + (self.__width * 2)
 
     def __str__(self):
+        """
+        Prints rectangle width #'s
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
