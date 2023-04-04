@@ -18,9 +18,9 @@ class Rectangle:
     @property
     def width(self):
         """ Getter returns width """
-        return self.__width = width
+        return self.__width
 
-    @setter.width
+    @width.setter
     def width(self, value):
         """ Setter return new value of width """
         if type(value) is not int:
@@ -33,9 +33,9 @@ class Rectangle:
     @property
     def height(self):
         """ Getter returns height """
-        return self.__height = height
+        return self.__height
 
-    @setter.height
+    @height.setter
     def height(self, value):
         """ Setheight must be >= 0ter return new value of height """
         if type(value) is not int:
@@ -55,6 +55,6 @@ class Rectangle:
         """
         Returns the parameter of the rectangle
         """
-        if self.__width == 0 or self.__ height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * self.__width) + (2 * self.__height)
