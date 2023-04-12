@@ -5,7 +5,7 @@ then save them to a file
 """
 
 
-import sys
+from sys import argv
 import json
 import os.path
 from typing import List
