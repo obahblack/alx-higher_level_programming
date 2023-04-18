@@ -111,6 +111,7 @@ class Rectangle(Base):
         Args:
             value (int): the value to set
         """
+        
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -119,18 +120,25 @@ class Rectangle(Base):
 
     def area(self):
         """Return area"""
+        
         return self.__width * self.__height
 
     def display(self):
         """
         Method to display rectangle in #
         """
+        
+        
         print("\n" * self.__y, end="")
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
-        """Prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        """
+        Prints [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+
+
         return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
