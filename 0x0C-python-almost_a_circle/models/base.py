@@ -53,7 +53,7 @@ class Base():
                 objs.append(cls.to_dictionary(o))
         filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
-            f.write(cls.to__json_string(objs))
+            f.write(cls.to_json_string(objs))
 
     @staticmethod
     def from_json_string(json_string):
