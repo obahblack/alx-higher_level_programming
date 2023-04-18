@@ -133,3 +133,35 @@ class Rectangle(Base):
         """Prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return ("[{:s}] ({:d}) {:d}/{:d} - {:d}}/{:d}".format(self.__class__.__name__, self.id, self.__x, self.__y, self.__width, self.__height))
 
+    def update(self, *args, **kwargs):
+        """
+        Method to update the attributes of the rectangle
+        """
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height =arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """ Returns the dictionary representation """
+        
+        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
