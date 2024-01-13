@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # connect to database
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3])
     
-    cursor = db.cursor
+    cursor = db.cursor()
     # this the select from state what is the same as user input
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(argv[4])
     
