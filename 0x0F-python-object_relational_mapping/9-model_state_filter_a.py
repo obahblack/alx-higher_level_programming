@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-return all state objects from database via python
+return state objects containing letter 'a' from database via python
 parameters given to script: username, password, database
 """
 
@@ -21,8 +21,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # query python instances in database
-    for instance in session.query(State).order_by(State.id):
-        print("{:d}: {:s}".format(instance.id, instance.name))
+    # query python instance in database for letter 'a'
+    for state in session.query(State).filter(
+            State.name.like('%a%')).order_by(State.id):
+        print("{:d}: {:s}".format(state.id, state.name))
 
     session.close()

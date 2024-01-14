@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-return all state objects from database via python
+return first state object from database via python
 parameters given to script: username, password, database
 """
 
@@ -21,8 +21,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # query python instances in database
-    for instance in session.query(State).order_by(State.id):
-        print("{:d}: {:s}".format(instance.id, instance.name))
+    # query first python instance in database
+    first_instance = session.query(State).order_by(State.id).first()
+    if first_instance:
+        print("{:d}: {:s}".format(first_instance.id, first_instance.name))
+    else:
+        print("Nothing")
 
     session.close()
