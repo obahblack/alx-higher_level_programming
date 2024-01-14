@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """Lists all state objects foom the database"""
 from sys import argv
 from model_state imposrt Base, State
