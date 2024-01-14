@@ -5,7 +5,7 @@ Script that takes in the name of a state as an argument and list all cities of t
 
 import MySQLdb
 from sys import argv
-if __name__ = "__main__":
+if __name__ == "__main__":
 
     # connect to database
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3])
