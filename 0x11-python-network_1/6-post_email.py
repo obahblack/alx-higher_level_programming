@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-given URL & email as params, send POST req to URL, display response body utf-8
+given URL & email as params, send POST req to URL, display response body utf
 """
-from sys import argv
 import requests
+import sys
 
 if __name__ == "__main__":
-    url = argv[1]
-    payload = {'email': argv[2]}
-    r = requests,post(url, data=payload)
-    print(r.text)
+    email = {}
+    email["email"] = sys.argv[2]
+    req = requests.post(sys.argv[1], email)
+    print(req.content.decode("utf-8"))
