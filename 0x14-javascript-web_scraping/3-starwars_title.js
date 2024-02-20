@@ -1,13 +1,23 @@
 #!/usr/bin/node
 // Returns status code
+let id = process.argv[2];
+let url = `https://swapi.dev/api/films/${id}`;
 const request = require('request');
-const url = 'http://swapi.co/api/films/';
-const argument = process.argv[2];
-request.get(url + argument, function (err, res, body) {
+
+request(url, function (err, response, body) {
 	if (err) {
-		return console.log(err);
+		console.log(err);
+		return;
 	}
-	let jsonFormat = JSON.parse(body);
-	let title = jsonFormat['title'];
-	console.log(title);
+
+	if (response.statusCode === 200) {
+		try {
+			body = JSON.parse(body);
+			console.log(body['title']);
+		} catch (parseError) {
+			console.log('Error parsing JSON:', parseError);
+		}
+	} else {
+		console.log('Error code:', response.statusCode);
+	}
 });

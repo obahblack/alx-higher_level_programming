@@ -5,10 +5,14 @@ let filename = process.argv[3];
 const fs = require('fs');
 const request = require('request');
 
-request(url, funtion (err, response, body) {
+request(url, function (err, response, body) {
 	if (err) {
 		console.log(err);
 	} else {
-		fs.writeFile(filename, body, 'utf8');
+		fs.writeFile(filename, body, function(err) {
+			if (err) {
+				console.log(err);
+			}
+		});
 	}
 });

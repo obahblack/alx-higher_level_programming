@@ -12,7 +12,7 @@ request(url, function (err, response, body) {
 		for (let i in films) {
 			let chars = films[i].characters;
 			for (let c in chars) {
-				if (chars[c],includes('18')) {
+				if (chars[c].includes('18')) {
 					count++;
 				}
 			}
